@@ -1,10 +1,8 @@
 
 var searched = []
-
 $(document).ready(document.addEventListener('DOMContentLoaded', function(){
     function renderMovies(movieArray){ 
-        var movieHTML = movieArray.map(function(currentMovie){    
-            
+        var movieHTML = movieArray.map(function(currentMovie){       
             return `
             <div class="card text-white bg-primary col-3 mx-3 px-3 my-3 py-3" style="width: 18rem;">
             <img class="card-img-top" src="${currentMovie.Poster}" alt="Card image cap">
@@ -31,16 +29,9 @@ $(document).ready(document.addEventListener('DOMContentLoaded', function(){
             .then(function(response) {
                 movieContainer.innerHTML = renderMovies(response.data.Search)
                 searched.push(response.data.Search)
-                console.log(searched[0])
-                // var addButton = document.getElementById('addButton');
-                // addButton.addEventListener('click', function saveToWatchList(imdbID))
         })
-        
-       
     })
-    
 }))
-
 function saveToWatchList(imdbID){
     var movie = searched[0].find(function(currentMovie){
         return currentMovie.imdbID == imdbID 
@@ -55,7 +46,6 @@ function saveToWatchList(imdbID){
     watchListJSON = JSON.stringify(watchlist);
     localStorage.setItem('watchList', watchListJSON)
 }
-
 function clearWatchList(){
 
     var cleared = localStorage.clear('watchList')
