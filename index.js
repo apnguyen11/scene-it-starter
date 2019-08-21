@@ -11,7 +11,7 @@ $(document).ready(document.addEventListener('DOMContentLoaded', function(){
                 <h5 class="card-title title">${currentMovie.Title}</h5>
                 </div>
                 <div>
-                <button id="addButton" onclick="saveToWatchList('${currentMovie.imdbID}')" type="button" href="#" class="btn btn-warning add-movie-btn">Add Movie</button>
+                <button id="addButton" onclick="saveToWatchList('${currentMovie.imdbID}'); this.disabled=true" type="button" href="#" class="btn btn-warning add-movie-btn">Add Movie</button>
                 <p class="card-text"><span>${currentMovie.Year}</span></p>
                 </div>
             </div>
@@ -33,8 +33,6 @@ $(document).ready(document.addEventListener('DOMContentLoaded', function(){
     })
 }))
 function saveToWatchList(imdbID){
-    $('.addMovie').text('Movie Added'); //changes text of button
-    $('.addMovie').prop("disabled", true) //disables button 
     var movie = searched[0].find(function(currentMovie){
         return currentMovie.imdbID == imdbID 
     })
