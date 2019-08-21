@@ -1,7 +1,30 @@
-var watchList = []
-function saveToWatchList(imdbid){
-    watchList.push(imdbid)
+//var watchlist = []
+// var mappedMovies = movieData.map(function(movieObject){
+//     return movieObject
+// })
+//console.log(mappedMovies)
+function saveToWatchList(imdbID){
+    console.log(imdbID)
+    var movie = movieData.find(function(currentMovie){
+        return currentMovie.imdbID == imdbID 
+    })
+    var watchListJSON = localStorage.getItem('watchList');
+    var watchlist = JSON.parse(watchListJSON)
+    console.log(watchlist)
+    if(watchlist === null){
+        console.log('watchlist null')
+        watchlist = []
+    } 
+    watchlist.push(movie);
+    console.log(watchlist)
+    watchListJSON = JSON.stringify(watchlist);
+    console.log(watchListJSON)
+    localStorage.setItem('watchList', watchListJSON)
+
+    
+    //watchList.push(imdbid)
    }
+   
 $(document).ready(document.addEventListener('DOMContentLoaded', function(){
     function renderMovies(movieArray){
         
