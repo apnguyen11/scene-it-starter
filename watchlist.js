@@ -11,7 +11,7 @@ $(document).ready(document.addEventListener('DOMContentLoaded', function(){
             <h5 class="card-title title">${movie.Title}</h5>
             </div>
             <div>
-            <button onclick="saveToWatchList('${movie.imdbID}')" type="button" href="#" class="btn btn-warning add-movie-btn">Add Movie</button>
+        
             <p class="card-text"><span>${movie.Year}</span></p>
             </div>
         </div>
