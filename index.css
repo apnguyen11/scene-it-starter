@@ -4,11 +4,24 @@ body {
 
 .header h2 {
 	color: rgb(255, 255, 255);
-	text-shadow: 2px 2px #aaa9a9;
+	margin: 35px auto;
+	margin-bottom: 20px;
+	text-align: center;
+	text-shadow: -1px -1px 0px rgba(255,255,255,0.3), 1px 1px 0px rgba(0,0,0,0.8);
+	
+	opacity: 0.8;
+	font: 700 80px 'Bitter';
 }
 
 .header p {
 	color: rgb(0, 0, 0);
+	font-family: Gill Sans, Verdana;
+ font-size: 11px;
+ line-height: 14px;
+ text-transform: uppercase;
+ letter-spacing: 2px;
+ font-weight: bold;
+	
 }
 
 .results {
