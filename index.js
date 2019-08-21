@@ -33,6 +33,8 @@ $(document).ready(document.addEventListener('DOMContentLoaded', function(){
     })
 }))
 function saveToWatchList(imdbID){
+    $('.addMovie').text('Movie Added'); //changes text of button
+    $('.addMovie').prop("disabled", true) //disables button 
     var movie = searched[0].find(function(currentMovie){
         return currentMovie.imdbID == imdbID 
     })
