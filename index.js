@@ -1,26 +1,6 @@
-//var watchlist = []
-// var mappedMovies = movieData.map(function(movieObject){
-//     return movieObject
-// })
-//console.log(mappedMovies)
+
 var searched = []
 
-
-// function saveToWatchList(imdbID){
-//     var movie = movieContainer.find(function(currentMovie){
-//         return currentMovie.imdbID == imdbID 
-//     })
-//     var watchListJSON = localStorage.getItem('watchList');
-//     var watchlist = JSON.parse(watchListJSON)
-//     if(watchlist === null){
-//         console.log('watchlist null')
-//         watchlist = []
-//     } 
-//     watchlist.push(movie);
-//     watchListJSON = JSON.stringify(watchlist);
-//     localStorage.setItem('watchList', watchListJSON)
-// }
-   
 $(document).ready(document.addEventListener('DOMContentLoaded', function(){
     function renderMovies(movieArray){ 
         var movieHTML = movieArray.map(function(currentMovie){    
@@ -75,6 +55,14 @@ function saveToWatchList(imdbID){
     watchListJSON = JSON.stringify(watchlist);
     localStorage.setItem('watchList', watchListJSON)
 }
+
+function clearWatchList(){
+
+    var cleared = localStorage.clear('watchList')
+    location.reload()
+    return cleared
+}
+
 
 
 
