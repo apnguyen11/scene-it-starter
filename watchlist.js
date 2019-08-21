@@ -2,6 +2,7 @@ $(document).ready(document.addEventListener('DOMContentLoaded', function(){
     var watchListStorage = localStorage.getItem('watchList');
     var watchlist = JSON.parse(watchListStorage)
     var mappedMovies = watchlist.map(function(movie){
+        
         return `
         <div class="card text-white bg-primary col-3 mx-3 px-3 my-3 py-3" style="width: 18rem;">
         <img class="card-img-top" src="${movie.Poster}" alt="Card image cap">
@@ -17,6 +18,8 @@ $(document).ready(document.addEventListener('DOMContentLoaded', function(){
         </div>
         `  
     }).join("")
+
+    
     var movieContainer = document.getElementById('movies-container');
     movieContainer.innerHTML = mappedMovies
 }));
