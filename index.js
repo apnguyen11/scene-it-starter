@@ -29,10 +29,12 @@ $(document).ready(document.addEventListener('DOMContentLoaded', function(){
             .then(function(response) {
                 movieContainer.innerHTML = renderMovies(response.data.Search)
                 searched.push(response.data.Search)
+
         })
     })
 }))
 function saveToWatchList(imdbID){
+    
     var movie = searched[0].find(function(currentMovie){
         return currentMovie.imdbID == imdbID 
     })
@@ -52,6 +54,8 @@ function clearWatchList(){
     location.reload()
     return cleared
 }
+
+
 
 
 
