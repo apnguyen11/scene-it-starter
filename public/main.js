@@ -25,7 +25,7 @@ $(document).ready(document.addEventListener('DOMContentLoaded', function(){
         e.preventDefault();  
         var inputValue = $('#input').val().toLowerCase() ;
         var urlEncodedSearchString = encodeURIComponent(inputValue)
-        axios.get("http://www.omdbapi.com/?apikey=3430a78&s=" + urlEncodedSearchString)
+        axios.get("https://www.omdbapi.com/?apikey=3430a78&s=" + urlEncodedSearchString)
             .then(function(response) {
                 movieContainer.innerHTML = renderMovies(response.data.Search)
                 searched.push(response.data.Search)
